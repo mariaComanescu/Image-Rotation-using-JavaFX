@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Button fx:id="uploadButton" layoutX="14.0" layoutY="368.0" mnemonicParsing="false" onAction="#buttonUploadAction" prefHeight="31.0" prefWidth="114.0" text="Upload Image" />
+      <Label layoutX="81.0" layoutY="68.0" prefHeight="21.0" prefWidth="107.0" text="Original image" />
+      <ImageView fx:id="originalImageView" fitHeight="150.0" fitWidth="200.0" layoutX="37.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="419.0" layoutY="68.0" text="Rotate image" />
+      <ImageView fitHeight="114.0" fitWidth="141.0" layoutX="406.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image.png" />
+         </image>
+      </ImageView>
+      <ToolBar layoutX="206.0" layoutY="395.0" prefHeight="72.0" prefWidth="177.0" rotate="-90.0">
+        <items>
+           <Button fx:id="rotate_90_Button" mnemonicParsing="false" onAction="#rotate_with_90" prefHeight="31.0" prefWidth="52.0" rotate="90.0" text="90" />
+            <Button fx:id="rotate_180_Button" mnemonicParsing="false" onAction="#rotate_with_180" prefHeight="31.0" prefWidth="48.0" rotate="90.0" text="180" />
+            <Button fx:id="rotate_270_Button" mnemonicParsing="false" onAction="#rotate_with_270" rotate="90.0" text="270" />
+        </items>
+      </ToolBar>
+      <Button fx:id="saveButton" layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#saveNewImage" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #23905f;" text="Save">
+         <cursor>
+            <Cursor fx:constant="SW_RESIZE" />
+         </cursor>
+      </Button>
+      <Separator layoutX="292.0" layoutY="120.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Button fx:id="deleteButton" layoutX="14.0" layoutY="456.0" mnemonicParsing="false" onAction="#buttonClearAction" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #51525d;" text="Delete" />
+      <ScrollBar layoutY="580.0" prefHeight="18.0" prefWidth="600.0" />
+      <Button fx:id="exitButton" cacheHint="QUALITY" depthTest="ENABLE" layoutX="14.0" layoutY="499.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonExitAction" prefHeight="31.0" prefWidth="114.0" style="-fx-background-color: #9d3a3a;" text="Exit">
+         <effect>
+            <Blend>
+               <topInput>
+                  <ColorAdjust brightness="-0.27" contrast="1.0" hue="-1.0" saturation="-1.0" />
+               </topInput>
+            </Blend>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="changedImageView" fitHeight="150.0" fitWidth="200.0" layoutX="347.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
